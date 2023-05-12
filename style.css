@@ -7,6 +7,10 @@
   --clr-gray-blue: hsl(233, 8%, 79%);
   --clr-dark-gray-blue: hsl(236, 13%, 42%);
   --clr-dark-blue: hsl(240, 100%, 5%);
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --fw-v-bold: 800;
+  counter-reset: article-counter;
 }
 
 /*
@@ -31,6 +35,7 @@
 html,
 body {
   height: 100%;
+  font-family: 'Inter';
 }
 
 /*
@@ -88,7 +93,6 @@ h6 {
 
 body a {
   text-decoration: none;
-  color: var();
 }
 
 nav {
@@ -100,10 +104,59 @@ nav ul {
   list-style-type: none;
 }
 
+nav a {
+  color: var(--clr-dark-blue);
+}
+
+nav a:hover,
+nav a:active {
+  color: var(--clr-prime-red);
+}
+
+div.hero-article h1 {
+  font-size: 4rem;
+  font-weight: var(--fw-v-bold);
+}
+
+div.hero-article a.btn {
+  color: var(--clr-off-white);
+  background-color: var(--clr-dark-blue);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  padding: 1.5rem 4rem;
+  letter-spacing: .4rem;
+  text-transform: uppercase;
+}
+
 section.side-panel {
   background-color: var(--clr-dark-blue);
-  color: var(--clr-off-white);
+  color: var(--clr-dark-gray-blue);
 }
+
+section.side-panel h2 {
+  color: var(--clr-prime-orange);
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+}
+
+section.side-panel hr {
+  color: var(--clr-dark-gray-blue);
+}
+
+section.side-panel a,
+section.side-panel a {
+  color: var(--clr-off-white);
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+
+section.side-panel a:hover,
+section.side-panel a:active {
+  color: var(--clr-prime-orange);
+  cursor: pointer;
+}
+
+
 
 main.grid {
   display: grid;
@@ -114,9 +167,31 @@ main img.img-desktop {
   display: none;
 }
 
+div.counter::before {
+  counter-increment: article-counter;
+  content: counter(article-counter, decimal-leading-zero);
+  font-size: 2rem;
+  color: var(--clr-gray-blue);
+}
 
+section.articles {
+  color: var(--clr-dark-blue);
+}
 
+section.articles a {
+  color: var(--clr-dark-blue);
+}
 
+section.articles p {
+  font-size: 1.5rem;
+  color: var(--clr-dark-gray-blue);
+}
+
+section.articles a:hover,
+section.articles a:active {
+  color: var(--clr-prime-red);
+  font-weight: var(--fw-normal);
+}
 
 @media only screen and (min-width: 768px) {
   main img.img-desktop {

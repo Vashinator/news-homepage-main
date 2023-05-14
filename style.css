@@ -13,6 +13,10 @@
   counter-reset: article-counter;
 }
 
+/* --------------- */
+/* Reset  */
+/* --------------- */
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -36,6 +40,7 @@ html,
 body {
   height: 100%;
   font-family: 'Inter';
+  overflow-x: hidden;
 }
 
 /*
@@ -91,13 +96,73 @@ h6 {
   isolation: isolate;
 }
 
-body a {
-  text-decoration: none;
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+
+.flex {
+  display: flex;
+  gap: 1rem;
 }
 
-nav {
-  display: flex;
+.logo {
+  margin: 1rem;
+}
+
+.prime-header {
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-nav {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+}
+
+@media (max-width: 35em) {
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 30%;
+    z-index: 1000;
+    background-color: var(--clr-off-white);
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-nav[data-visible='true'] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    background-image: url(/assets/images/icon-menu.svg);
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] {
+    background-image: url(/assets/images/icon-menu-close.svg);
+  }
+
 }
 
 nav ul {
@@ -106,12 +171,31 @@ nav ul {
 
 nav a {
   color: var(--clr-dark-blue);
+  margin-inline-end: 2rem;
 }
 
 nav a:hover,
 nav a:active {
   color: var(--clr-prime-red);
 }
+
+/* --------------- */
+/* Other Classes */
+/* --------------- */
+
+body a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 div.hero-article h1 {
   font-size: 4rem;
@@ -120,12 +204,22 @@ div.hero-article h1 {
 
 div.hero-article a.btn {
   color: var(--clr-off-white);
-  background-color: var(--clr-dark-blue);
+  background-color: var(--clr-prime-red);
   font-size: 1.25rem;
   font-weight: var(--fw-bold);
   padding: 1.5rem 4rem;
   letter-spacing: .4rem;
   text-transform: uppercase;
+}
+
+div.hero-article p {
+  margin-bottom: 2rem;
+  color: var(--clr-dark-gray-blue);
+}
+
+div.hero-article a.btn:hover,
+div.hero-article a.btn:active {
+  background-color: var(--clr-dark-blue);
 }
 
 section.side-panel {
@@ -160,7 +254,8 @@ section.side-panel a:active {
 
 main.grid {
   display: grid;
-
+  align-items: center;
+  justify-content: center;
 }
 
 main img.img-desktop {

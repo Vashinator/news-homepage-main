@@ -8,6 +8,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
   <title>Frontend Mentor | News homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -24,10 +25,14 @@
 </head>
 
 <body>
-  <header>
+  <header class=" prime-header flex">
     <img src="/assets/images/logo.svg" alt="News Site Logo" class="logo">
+    <button aria-controls="primary-nav" aria-expanded="false" class="mobile-nav-toggle">
+      <!-- <span class="sr-only">Menu</span> -->
+    </button>
+
     <nav>
-      <ul>
+      <ul id='primary-nav' class=" primary-nav flex" data-visible="false">
         <li><a href="#" class="nav-link">Home</a></li>
         <li><a href="#" class="nav-link">New</a></li>
         <li><a href="#" class="nav-link">Popular</a></li>

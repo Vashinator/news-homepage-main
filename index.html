@@ -7,6 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <script src="nav.js" defer></script>
   <title>Frontend Mentor | News homepage</title>
@@ -25,8 +26,8 @@
 </head>
 
 <body>
-  <header class=" prime-header flex">
-    <img src="./assets/images/logo.svg" alt="News Site Logo" class="logo">
+  <header class="header flex">
+    <img src="./assets/images/logo.svg" alt="News Site Logo" class="header__logo">
     <button aria-controls="primary-nav" aria-expanded="false" class="mobile-nav-toggle">
       <!-- <span class="sr-only">Menu</span> -->
     </button>
@@ -48,18 +49,19 @@
         <img class="img-mobile" src="./assets/images/image-web-3-mobile.jpg" alt="">
         <img class="img-desktop grid-col-span-2" src="./assets/images/image-web-3-desktop.jpg" alt="">
       </div>
-      <div class="hero-article">
+      <div class="hero__article flex">
         <h1>The Bright Future of Web 3.0?</h1>
+        <div class="hero__article-text">
+          <p>
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands
+            of
+            the
+            people.
+            But is it really fulfilling its promise?
+          </p>
 
-        <p>
-          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands
-          of
-          the
-          people.
-          But is it really fulfilling its promise?
-        </p>
-
-        <a href="" class="btn">Read more</a>
+          <a href="" class=" hero__article-link btn">Read more</a>
+        </div>
       </div>
     </section>
     <section class="side-panel">

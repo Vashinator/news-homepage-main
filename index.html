@@ -13,16 +13,7 @@
   <title>Frontend Mentor | News homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
@@ -45,10 +36,8 @@
   <main class="grid">
 
     <section class="hero">
-      <div class="hero-images">
-        <img class=" img-mobile" src="./assets/images/image-web-3-mobile.jpg" alt="">
-        <img class="img-desktop " src="./assets/images/image-web-3-desktop.jpg" alt="">
-      </div>
+      <img class="hero__img-mobile" src="./assets/images/image-web-3-mobile.jpg" alt="">
+      <img class="hero__img-desktop " src="./assets/images/image-web-3-desktop.jpg" alt="">
       <div class="hero__article flex">
         <h1>The Bright Future of Web 3.0?</h1>
         <div class="hero__article-text">
@@ -81,40 +70,42 @@
         <a href="#" class="article-title">Is VC Funding Drying Up?</a>
         <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
     </section>
-    <!-- <section class="articles grid-col-span-3"> -->
-    <section class="article flex">
+  </main>
+  <!-- <section class="articles grid-col-span-3"> -->
+  <div class="articles">
+    <section class="article article-1">
       <img src="./assets/images/image-retro-pcs.jpg" alt="">
       <div class="counter"></div></br>
       <div>
-        <h2><a href="">Reviving Retro PCs</a></h2></br>
+        <h2><a href="">Reviving Retro PCs</a></h2>
         <p>What happens when old PCs are given modern upgrades?</p>
       </div>
     </section>
 
-    <section class="article flex">
+    <section class="article article-2">
       <img src="./assets/images/image-top-laptops.jpg" alt="">
       <div class="counter"></div></br>
       <div>
-        <h2><a href="">Top 10 Laptops of 2022</a></h2></br>
+        <h2><a href="">Top 10 Laptops of 2022</a></h2>
         <p>Our best picks for various needs and budgets.</p>
       </div>
     </section>
 
-    <section class="article flex">
+    <section class="article article-3">
       <img src="./assets/images/image-gaming-growth.jpg" alt="">
       <div class="counter"></br></div>
       <div>
         <h2><a href="">The Growth of Gaming</a></h2>
         <p>How the pandemic has sparked fresh opportunities.</p>
       </div>
-    </section>
-    <!-- </section> -->
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        rel="noopener noreferrer">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/vashinator">Vashinator</a>.
-    </div>
-  </main>
+  </div>
+  </section>
+  <!-- </section> -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      rel="noopener noreferrer">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/vashinator">Vashinator</a>.
+  </div>
 </body>
 
 </html>

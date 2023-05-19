@@ -173,7 +173,13 @@ main.grid {
   /* justify-content: center; */
 }
 
-main img.img-desktop {
+
+.articles {
+  display: grid;
+  gap: 1rem;
+}
+
+main img.hero__img-desktop {
   display: none;
 }
 
@@ -182,10 +188,13 @@ div.counter::before {
   content: counter(article-counter, decimal-leading-zero);
   font-size: 2rem;
   color: var(--clr-gray-blue);
+  font-weight: var(--fw-bold);
 }
 
 section.article {
   color: var(--clr-dark-blue);
+  display: flex;
+  width: 70%;
 }
 
 section.article a {
@@ -207,44 +216,65 @@ section.article img {
   max-height: 8rem;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
 
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
 @media only screen and (min-width: 768px) {
   body {}
 
-  main img.img-desktop {
+  main img.hero__img-desktop {
     display: block;
-    height: 25rem;
   }
 
   .grid-col-span-2 {
     grid-column: span 2;
   }
 
-  .grid-col-span-3 {
-    grid-column: span 3;
-  }
-
-  main img.img-mobile {
+  main img.hero__img-mobile {
     display: none;
   }
 
+  main.grid,
+  .articles {
+    margin: 0 auto;
+    width: 80%;
+  }
+
   main.grid {
-    grid-template-columns: repeat(3, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-areas:
+      'hero-img aside'
+      'hero-article aside';
+    justify-content: center;
+  }
+
+  .articles {
+    margin-top: 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 35rem));
+    grid-template-areas: 'article-1 article-2 article-3';
     justify-content: center;
   }
 
 
 
-  .hero-images {
-    grid-column: span 3;
-    grid-row: 1/2;
+
+
+  .hero__img-desktop {
+
+    grid-area: hero-img;
   }
 
   div.heor__article {
     grid-row: 2/3;
     grid-column: 1/3;
     max-width: 50%;
+    grid-area: hero-article;
   }
 
   div.hero__article h1 {
@@ -278,11 +308,29 @@ section.article img {
     grid-column-start: 3;
     grid-row: 1/3;
     grid-column: 2/3;
-
+    grid-area: aside;
   }
 
   .header {
     margin-top: 5rem;
+    width: 80%;
+    margin: 5rem auto;
+  }
+
+  .article-1 {
+    grid-area: article-1;
+  }
+
+  .article-2 {
+    grid-area: article-2;
+  }
+
+  .article-3 {
+    grid-area: article-3;
+  }
+
+  .attribution {
+    grid-area: attribution;
   }
 
 }
@@ -324,7 +372,7 @@ section.article img {
     background-image: url(/assets/images/icon-menu-close.svg);
   }
 
-  .hero .hero__article {
+  .hero__article {
     flex-direction: column;
     width: 100%;
   }
